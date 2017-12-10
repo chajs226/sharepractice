@@ -14,12 +14,14 @@
     <script type="text/javascript">
         $(document).ready(function(){
             $("button").on('click', function() {
-                $("ol").append("<li>list item <a href='javascript:void(0);' class='remove'>&times;</a></li>");
+                $("list-group").append("<button type=\"button\" class=\"list-group-item\">add</button>");
             });
             $(document).on("click", "a.remove" , function() {
                 $(this).parent().remove();
             });
         });
+
+
     </script>
 
   </head>
@@ -30,11 +32,12 @@
     </div>
 
     <button type="button" class="btn btn-primary btn-lg btn-block" id="add">+</button>
-    <ol>
-        <!-- <li>list item</li>
-        <li>list item</li>
-        <li>list item</li> -->
-    </ol>
+    <div class="list-group">
+      <button type="button" class="list-group-item">These Boots Are Made For Walking</button>
+      <button type="button" class="list-group-item">Puss 'n' Boots</button>
+      <button type="button" class="list-group-item">Die With Your Boots On</button>
+      <button type="button" class="list-group-item">Fairies Wear Boots</button>
+    </div>
 
   </body>
 </html>
