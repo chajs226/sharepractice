@@ -1,8 +1,17 @@
 var save = document.getElementById('btnSave');
 
 btnSave.addEventListener('click', function() {
-  alert('aaaaa');
-})
+
+  var aNode = document.createElement("a");
+  aNode.className = "list-group-item list-group-item-action"
+  aNode.href = "#"
+  var t = document.createTextNode("AAAAAA");
+  aNode.appendChild(t);
+  document.getElementById("todoList").appendChild(aNode);
+
+
+
+});
 
 
 
