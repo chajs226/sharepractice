@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script src="http://www.WebRTC-Experiment.com/RecordRTC.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("button").click(function(){
+          var session = {
+            audio: true,
+            video: false
+          };
+          var recordRTC = null;
+          navigator.getUserMedia(session, function (mediaStream) {
+            recordRTC = RecordRTC(MediaStream);
+            recordRTC.startRecording();
+          }, onError(e));
+        })
+      })
+
+      function onError(e){
+        alert('Error');
+        console.log(e);
+      }
+    </script>
+  </head>
+  <body>
+    <button>Add new list item</button>
+  </body>
+</html>
