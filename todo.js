@@ -2,6 +2,22 @@ var save = document.getElementById('btnSave');
 
 btnSave.addEventListener('click', function() {
 
+ if ($('#recipient-name').val() == '') {
+    alert("입력된 내용이 없습니다.");
+  }
+  else {
+    $.ajax({
+    type: "POST", // POST형식으로 폼 전송
+    url: "commentajax.php", // 목적지
+    timeout: 10000,
+    data: ({comment: _comment, mid: _mid}),
+    cache: false,
+    dataType: "text",
+    error: function(xhr, textStatus, errorThrown) { // 전송 실패
+        alert("전송에 실패했습니다.");
+  }
+
+/* 리스트를 동적으로 추가하는 자바스크립트 소스
   //리스트 그룹에 노드 추가
   var aNode = document.createElement("a");
   aNode.className = "list-group-item list-group-item-action"
@@ -20,44 +36,8 @@ btnSave.addEventListener('click', function() {
   aNode.appendChild(h4Node);
   aNode.appendChild(pNode);
 
-  //var t = document.createTextNode("AAAAAA");
-  //aNode.appendChild(t);
   document.getElementById("todoList").appendChild(aNode);
-
+*/
 
 
 });
-
-
-
-// $(function() {
-//
-//
-// // configuration
-//
-// // button
-// var add = $('#add');
-//
-// // list container
-// var listContainer = $('#list');
-//
-//
-//
-// // click event for button
-//
-// add.on('click', function() {
-//
-//      event.preventDefault(); // stop default behaviour of submit button
-//     // value of input
-//     inputValue = $('#input').val();
-//
-//     // add new list item
-//     listContainer.prepend('<li> ' + inputValue + '</li>');
-//     // clear value input
-//     $('#input').val('');
-//
-//
-//
-// });
-//
-// });
