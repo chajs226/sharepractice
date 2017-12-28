@@ -8,9 +8,12 @@ btnSave.addEventListener('click', function() {
   else {
     $.ajax({
     type: "POST", // POST형식으로 폼 전송
-    url: "commentajax.php", // 목적지
+    url: "./todo.php", // 목적지
     timeout: 10000,
-    data: ({comment: _comment, mid: _mid}),
+    data: {
+      "recipient-name": $('#recipient-name').val(),
+      "message-text": $('#message-text').val()
+    }
     cache: false,
     dataType: "text",
     error: function(xhr, textStatus, errorThrown) { // 전송 실패
