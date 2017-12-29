@@ -13,12 +13,14 @@ btnSave.addEventListener('click', function() {
     data: {
       "recipient-name": $('#recipient-name').val(),
       "message-text": $('#message-text').val()
-    }
+    },
     cache: false,
     dataType: "text",
     error: function(xhr, textStatus, errorThrown) { // 전송 실패
         alert("전송에 실패했습니다.");
   }
+});
+}
 
 /* 리스트를 동적으로 추가하는 자바스크립트 소스
   //리스트 그룹에 노드 추가
