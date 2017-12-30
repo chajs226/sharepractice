@@ -53,6 +53,9 @@
   if (empty($_GET['id']) == false) {
     echo file_get_contents($_GET['id'].".html");
   }
+  else {
+    echo file_get_contents("main.html");
+  }
  ?>
 
 

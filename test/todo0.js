@@ -1,3 +1,5 @@
+// 동적으로 html 에서 리스트 추가하는 자바스크립트
+
 var save = document.getElementById('btnSave');
 
 btnSave.addEventListener('click', function() {
