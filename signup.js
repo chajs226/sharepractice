@@ -11,16 +11,21 @@ btnSignUp.addEventListener('click', function() {
   else {
     $.ajax({
     type: "POST", // POST형식으로 폼 전송
-    url: "./todo.php", // 목적지
+    url: "./signup.php", // 목적지
     timeout: 10000,
     data: {
-      "recipient-name": $('#recipient-name').val(),
-      "message-text": $('#message-text').val()
+      "email": $('#inputEmail').val(),
+      "nicname": $('#inputNickname').val(),
+      "password": $('#inputPassword').val()
     },
     cache: false,
     dataType: "text",
-    error: function(xhr, textStatus, errorThrown) { // 전송 실패
-        alert("전송에 실패했습니다.");
+    success:function(args){
+      // $('#resultComment').html("환영합니다.");
+      alert("환영합니다.");
+    },
+    error: function(e) { // 전송 실패
+        alert(e.responseText);
   }
 });
 }
