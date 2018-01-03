@@ -24,8 +24,10 @@ btnSignUp.addEventListener('click', function() {
       // $('#resultComment').html("환영합니다.");
       alert("환영합니다.");
     },
-    error: function(e) { // 전송 실패
-        alert(e.responseText);
+    error: function(request,status,error) { // 전송 실패
+      alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+
+출처: http://sirdeath.tistory.com/entry/ajax-500-internal-server-에러-발생시 [sirdeath의 까마귀가 레이져를]
   }
 });
 }
