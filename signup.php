@@ -6,7 +6,7 @@ $data_stream = "'".$_POST['email']."','".$_POST['nickname']."','".$_POST['passwo
 $query = "insert into userinfo(email,nickname,password) values (".$data_stream.")";
 
 $result = mysqli_query($conn, $query);
-
+ echo "<script>alert($result);</script>";
 if ($result) {
     // echo "가입이 완료되었습니다. 로그인 화면으로 이동합니다..";
     echo "true";

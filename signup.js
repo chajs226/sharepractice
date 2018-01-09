@@ -17,6 +17,7 @@ btnSignUp.addEventListener('click', function() {
     $.ajax({
     type: 'POST', // POST형식으로 폼 전송
     dataType: 'json',
+    async: false, //true:비동기, false:동기
     url: './signup.php', // 목적지
     data: {
       "email": $('#inputEmail').val(),
@@ -24,11 +25,17 @@ btnSignUp.addEventListener('click', function() {
       "password": $('#inputPassword').val()
       },
     success: function (data) {
+        alert(data)
+        console.log(data);
         console.log(data);
         $('#response').html(data);
+        window.location = "index.php?id=signin";
       },
     error: function (request, status, error) {
+        alert('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
         console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
+        console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
+        window.location = "index.php?id=signup";
       }
     });
   }
