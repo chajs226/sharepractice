@@ -51,12 +51,13 @@
 <!-- 메뉴 선택에 따른 html 페이지 호출 -->
 <?php
 
+  error_log(var_export($_SESSION['email'], 1));
+
   if (empty($_GET['id']) == false) {
     echo file_get_contents($_GET['id'].".html");
   }
   else {
     //main.html 화면인 경우
-    session_start();
     if(!isset($_SESSION['email']) || !isset($_SESSION['nickname'])) {
     	echo("<script>window.location.search = '?id=signin'</script>");
     	exit;

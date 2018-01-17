@@ -14,7 +14,7 @@ $count = mysqli_num_rows($result);
 error_log(var_export($count, 1));
 
 if ($count == 1) {
-    $row = mysqli_fetch_row($return);
+    $row = mysqli_fetch_row($result);
     error_log(var_export($row, 1));
 
     session_start();
