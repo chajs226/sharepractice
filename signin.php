@@ -3,7 +3,7 @@
 include("config.php");
 
 $query = "select email, nickname from userinfo where vald = 'Y' and email = '".$_POST['email']."' and password = '".$_POST['password']."'";
-
+error_log(var_export($query, 1));
 //$query = "select email, nickname from userinfo where vald = 'Y' and email = '99@99' and password = '9'";
 // insert into ..... values ('.$_POST['email'].','.$_POST['nickname'].','.$_POST['password'].',''
 $result = mysqli_query($conn, $query);
@@ -14,7 +14,7 @@ $count = mysqli_num_rows($result);
 error_log(var_export($count, 1));
 
 if ($count == 1) {
-    $row = mysql_fetch_row($return);
+    $row = mysqli_fetch_row($return);
     error_log(var_export($row, 1));
 
     session_start();
