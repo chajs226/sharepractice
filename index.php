@@ -51,25 +51,30 @@
 <!-- 메뉴 선택에 따른 html 페이지 호출 -->
 <?php
 
-  error_log(var_export($_SESSION['email'], 1));
+  session_start();
+  //error_log(var_export($_SESSION['email'], 1));
 
   if (empty($_GET['id']) == false) {
     echo file_get_contents($_GET['id'].".html");
   }
   else {
     //main.html 화면인 경우
-    if(!isset($_SESSION['email']) || !isset($_SESSION['nickname'])) {
+    if(!isset($_SESSION['is_login'])) {
     	echo("<script>window.location.search = '?id=signin'</script>");
     	exit;
     }
-    $email = $_SESSION['email'];
-    $nickname = $_SESSION['nickname'];
-    echo "<p>안녕하세요. $nickname님</p>";
-    echo "<p><a href='logout.php'>로그아웃</a></p>";
-    echo file_get_contents("main.html");
+    // $email = $_SESSION['email'];
+    // $nickname = $_SESSION['nickname'];
+     echo $_SESSION['nickname'];"<p>님, 환영합니다.</p>";
+     echo "<p><a href='logout.php'>로그아웃</a></p>";
+     echo file_get_contents("main.html");
+    // echo "$_SESSION['nickname'];<p>님 환영합니다.</p>";
+   // <a href='logout.php'>로그아웃</a>
   }
  ?>
 
+  <!-- <?php echo $_SESSION['nickname'];?>님 환영합니다.<br />;
+  <a href='logout.php'>로그아웃</a> -->
 
   </body>
 </html>

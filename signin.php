@@ -18,10 +18,16 @@ if ($count == 1) {
     error_log(var_export($row, 1));
 
     session_start();
+    $_SESSION['is_login'] = true;
     $_SESSION['email'] = $row[0];
     $_SESSION['nickname'] = $row[1];
+    error_log(var_export($_SESSION['is_login'], 1));
+    error_log(var_export($_SESSION['email'], 1));
+    error_log(var_export($_SESSION['nickname'], 1));
+
     $return = array ('result'=>true, 'message'=>"로그인 되었습니다.");
     echo json_encode($return);
+    header('Location: ./index.php');
 
   } else {
     $return = array ('result'=>false, 'message'=>"계정 정보가 올바르지 않습니다.");

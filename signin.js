@@ -20,7 +20,7 @@ btnSignIn.addEventListener('click', function() {
     success: function (data) {
         console.log(data);
         // $('#response').html(data);
-        window.location.href = "index.php"
+        //window.location.search = "";
       },
     error: function (request, status, error) {
         //alert('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
