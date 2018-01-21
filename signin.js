@@ -27,7 +27,7 @@ btnSignIn.addEventListener('click', function() {
         //console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
         //console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
         console.log(error);
-        window.location.search = "?id=signin";
+        // window.location.search = "?id=signin";
       }
     });
   }

@@ -63,18 +63,19 @@
     	echo("<script>window.location.search = '?id=signin'</script>");
     	exit;
     }
-    // $email = $_SESSION['email'];
-    // $nickname = $_SESSION['nickname'];
-     echo $_SESSION['nickname'];"<p>님, 환영합니다.</p>";
-     echo "<p><a href='logout.php'>로그아웃</a></p>";
+
+    echo("<div class=\"container\">");
+    echo("<h4><a href=\"#\" class=\"badge badge-light float-right\">".$_SESSION['nickname']."</span></h4>");
+    echo("</div>");
+    // echo("<blockquote class=\"blockquote text-right\">");
+    // echo("<p class=\"mb-0\">".$_SESSION['nickname']."</p>");
+    // echo("</blockquote>");
      echo file_get_contents("main.html");
-    // echo "$_SESSION['nickname'];<p>님 환영합니다.</p>";
-   // <a href='logout.php'>로그아웃</a>
+
   }
  ?>
 
-  <!-- <?php echo $_SESSION['nickname'];?>님 환영합니다.<br />;
-  <a href='logout.php'>로그아웃</a> -->
+
 
   </body>
 </html>

@@ -27,7 +27,7 @@ btnSignUp.addEventListener('click', function() {
     success: function (data) {
         console.log(data);
         $('#response').html(data);
-        location.replace('index.php?id=signin');
+        //location.replace('index.php?id=signin');
         // window.location.href = "index.php";
         // window.location.search = "?id=signin"
       },
@@ -36,7 +36,7 @@ btnSignUp.addEventListener('click', function() {
         //console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
         //console.log('code: '+request.status+"\n"+'message: '+request.responseText+"\n"+'error: '+error);
         console.log(error);
-        window.location.href = "index.php?id=signup";
+        //window.location.href = "index.php?id=signup";
       }
     });
   }

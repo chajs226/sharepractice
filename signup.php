@@ -14,6 +14,7 @@ if ($result) {
     $return = array ('result'=>true, 'message'=>"가입이 완료되었습니다. 로그인 화면으로 이동합니다.");
     // echo "가입이 완료되었습니다. 로그인 화면으로 이동합니다..";
     echo json_encode($return);
+    header('Location: ./index.php?id=signin');
   } else {
     $return = array ('result'=>false, 'message'=>"회원가입이 되지 않았습니다.");
     // echo "가입이 완료되었습니다. 로그인 화면으로 이동합니다..";
