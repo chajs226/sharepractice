@@ -65,7 +65,7 @@
     }
 
     echo("<div class=\"container\">");
-    echo("<h4><a href=\"#\" class=\"badge badge-light float-right\">".$_SESSION['nickname']."</span></h4>");
+    echo("<h4><a href=\"signout.php\" class=\"badge badge-light float-right\">".$_SESSION['nickname']."</span></h4>");
     echo("</div>");
     // echo("<blockquote class=\"blockquote text-right\">");
     // echo("<p class=\"mb-0\">".$_SESSION['nickname']."</p>");
