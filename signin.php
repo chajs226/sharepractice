@@ -27,7 +27,8 @@ if ($count == 1) {
 
     $return = array ('result'=>true, 'message'=>"로그인 되었습니다.");
     echo json_encode($return);
-    header('Location: ./index.php');
+    //header('Location: ./index.php');
+    echo("<script>location.replace('./index.php');</script>");
 
   } else {
     $return = array ('result'=>false, 'message'=>"계정 정보가 올바르지 않습니다.");
