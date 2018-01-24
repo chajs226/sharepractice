@@ -1,8 +1,25 @@
+$(window).load(function() {
+// TODO 조회
+  $.ajax({
+  type: "POST", // POST형식으로 폼 전송
+  url: "./todo_list.php", // 목적지
+  timeout: 10000,
+  data: {
+    "email": <?php $_SESSION['email'] ?>
+  },
+  cache: false,
+  dataType: "text",
+  error: function(xhr, textStatus, errorThrown) { // 전송 실패
+      alert("전송에 실패했습니다.");
+
+})
+
+
 var save = document.getElementById('btnSave');
 
 btnSave.addEventListener('click', function() {
 
- if ($('#recipient-name').val() == '') {
+ if ($('#todo_title').val() == '') {
     alert("입력된 내용이 없습니다.");
   }
   else {
@@ -11,6 +28,7 @@ btnSave.addEventListener('click', function() {
     url: "./todo.php", // 목적지
     timeout: 10000,
     data: {
+      "email": <?php $_SESSION['email'] ?>
       "recipient-name": $('#recipient-name').val(),
       "message-text": $('#message-text').val()
     },
