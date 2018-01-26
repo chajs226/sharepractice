@@ -5,7 +5,7 @@ $(window).load(function() {
   url: "./todo_list.php", // 목적지
   timeout: 10000,
   data: {
-    "email": <?php $_SESSION['email'] ?>
+    "email": <?php $_SESSION['email']; ?>;
   },
   cache: false,
   dataType: "text",
