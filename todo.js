@@ -1,18 +1,23 @@
-$(window).load(function() {
+window.onload = function() {
 // TODO 조회
+  var email = document.getElementById('lblEmail');
+
   $.ajax({
   type: "POST", // POST형식으로 폼 전송
   url: "./todo_list.php", // 목적지
   timeout: 10000,
   data: {
-    "email": <?php $_SESSION['email']; ?>;
+    "email": email.dataset.email
   },
   cache: false,
   dataType: "text",
   error: function(xhr, textStatus, errorThrown) { // 전송 실패
       alert("전송에 실패했습니다.");
+    }
+  });
 
-})
+});
+
 
 
 var save = document.getElementById('btnSave');
@@ -28,7 +33,7 @@ btnSave.addEventListener('click', function() {
     url: "./todo.php", // 목적지
     timeout: 10000,
     data: {
-      "email": <?php $_SESSION['email'] ?>
+      "email": email.dataset.email,
       "recipient-name": $('#recipient-name').val(),
       "message-text": $('#message-text').val()
     },
@@ -36,10 +41,10 @@ btnSave.addEventListener('click', function() {
     dataType: "text",
     error: function(xhr, textStatus, errorThrown) { // 전송 실패
         alert("전송에 실패했습니다.");
+      }
+    });
   }
 });
-}
-
 /* 리스트를 동적으로 추가하는 자바스크립트 소스
   //리스트 그룹에 노드 추가
   var aNode = document.createElement("a");
@@ -61,6 +66,3 @@ btnSave.addEventListener('click', function() {
 
   document.getElementById("todoList").appendChild(aNode);
 */
-
-
-});
