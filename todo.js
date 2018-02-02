@@ -1,5 +1,7 @@
 window.onload = function() {
 // TODO 조회
+
+  //var email = "<?php echo .$_SESSION['email']. ?>";
   var email = document.getElementById('lblEmail');
 
   $.ajax({
@@ -15,8 +17,7 @@ window.onload = function() {
       alert("전송에 실패했습니다.");
     }
   });
-
-});
+}
 
 
 
@@ -45,6 +46,7 @@ btnSave.addEventListener('click', function() {
     });
   }
 });
+
 /* 리스트를 동적으로 추가하는 자바스크립트 소스
   //리스트 그룹에 노드 추가
   var aNode = document.createElement("a");
