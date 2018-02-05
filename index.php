@@ -54,7 +54,10 @@
   session_start();
   //error_log(var_export($_SESSION['email'], 1));
 
-  if (empty($_GET['id']) == false) {
+  if ($_GET['id'] == 'signin') {
+   echo file_get_contents("signin.html");
+ }
+ else if (empty($_GET['id']) == false) {
     checkLogin();
     echo file_get_contents($_GET['id'].".html");
   }

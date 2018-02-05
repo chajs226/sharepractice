@@ -3,7 +3,7 @@ session_start();
 
 include("config.php");
 
-$query = "select todo_id, todo_date, todo_title, todo_desc, todo_start, todo_end, todo_ from todo where email = '".$_POST['email']."' and todo_date = '"DATE_FORMAT(NOW(),'%Y%m%d')"'";
+$query = "select todo_id, todo_date, todo_title, todo_desc, todo_start, todo_end, todo_ from todo where email = '".$_POST['email']."' and todo_date = `"DATE_FORMAT(NOW(),`%Y%m%d`)"`";
 error_log(var_export($query, 1));
 //$query = "select email, nickname from userinfo where vald = 'Y' and email = '99@99' and password = '9'";
 // insert into ..... values ('.$_POST['email'].','.$_POST['nickname'].','.$_POST['password'].',''
