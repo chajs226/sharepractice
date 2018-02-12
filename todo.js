@@ -13,6 +13,9 @@ window.onload = function() {
   },
   cache: false,
   dataType: "text",
+  success: function (data) {
+      console.log(data);
+    },
   error: function(xhr, textStatus, errorThrown) { // 전송 실패
       alert("전송에 실패했습니다.");
     }
