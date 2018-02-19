@@ -52,35 +52,17 @@
 <?php
 
   session_start();
-  //error_log(var_export($_SESSION['email'], 1));
 
-  if ($_GET['id'] == 'signin') {
-   echo file_get_contents("signin.html");
- }
- else if (empty($_GET['id']) == false) {
-    checkLogin();
-    echo file_get_contents($_GET['id'].".html");
-  }
-  else {
-    //main.html 화면인 경우 로그인되어 있지 않으면,, 로그인 화면으로 리다이렉션 처리
-    // if(!isset($_SESSION['is_login'])) {
-    // 	echo("<script>window.location.search = '?id=signin'</script>");
-    // 	exit;
-    // }
-    //
-    // echo("<div class=\"container\">");
-    // echo("<h4><a id=\"lblEmail\" href=\"signout.php\" class=\"badge badge-light float-right\" data-email=".$_SESSION['email'].">".$_SESSION['nickname']."</span></h4>");
-    // echo("</div>");
-    //
-    // error_log(var_export($_SESSION['email'], 1));
-
-
-    // echo("<blockquote class=\"blockquote text-right\">");
-    // echo("<p class=\"mb-0\">".$_SESSION['nickname']."</p>");
-    // echo("</blockquote>");
-    checkLogin();
+  if (empty($_GET['id']) == false) {
+   if ($_GET['id'] == 'signin') {
+     echo file_get_contents("signin.html");
+   } else {
+      checkLogin();
+      echo file_get_contents($_GET['id'].".html");
+    }
+   } else {
+     checkLogin();
      echo file_get_contents("main.html");
-
   }
 
 function checkLogin() {
@@ -89,7 +71,8 @@ function checkLogin() {
     exit;
   } else {
     echo("<div class=\"container\">");
-    echo("<h4><a id=\"lblEmail\" href=\"signout.php\" class=\"badge badge-light float-right\" data-email=".$_SESSION['email'].">".$_SESSION['nickname']."</span></h4>");
+    // echo("<h4><a id=\"lblEmail\" href=\"signout.php\" class=\"badge badge-light float-right\" data-email=".$_SESSION['email'].">".$_SESSION['nickname']."</span></h4>");
+    echo("<h4><a id=\"lblEmail\" class=\"badge badge-light float-right\" data-email=".$_SESSION['email'].">".$_SESSION['nickname']."</span></h4>");
     echo("</div>");
   }
 
